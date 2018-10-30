@@ -35,7 +35,8 @@
 					<artifactId>docker-maven-plugin</artifactId>
 					<version>1.2.0</version>
 					<configuration>
-						<imageName>${project.artifactId}</imageName>
+						<imageName>${project.groupId}/${project.artifactId}</imageName>
+						<imageTags>${project.version}</imageTags>
 						<baseImage>docker.io/java:8</baseImage>
 						<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
 						<resources>
@@ -45,11 +46,6 @@
 								<include>${project.build.finalName}.jar</include>
 							</resource>
 						</resources>
-						<imageTags>
-							<imageTag>${project.version}</imageTag>
-							<imageTag>latest</imageTag>
-						</imageTags>
-						<forceTags>true</forceTags>
 					</configuration>
 				</plugin>
 			</plugins>
