@@ -5,6 +5,7 @@
 		<groupId>io.github.qianlixy.demo</groupId>
 		<artifactId>qianlixy-demo-microserver</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>microserver-eureka</artifactId>
