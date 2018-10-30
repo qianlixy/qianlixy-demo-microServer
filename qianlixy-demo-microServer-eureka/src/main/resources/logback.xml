@@ -2,35 +2,30 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 
+	<!--
 	<appender name="LOGSTASH"
 		class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 		<destination>192.168.88.10:5044</destination>
-		<encoder charset="UTF-8"
-			class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
-			<providers>
-				<timestamp>
-					<timeZone>UTC</timeZone>
-				</timestamp>
-				<pattern>
-					<pattern>
-						{
-						"webtype": "microserver",
-						"appname": "eureka",
-						"level": "%level",
-						"pid": "${PID:-}",
-						"thread": "%thread",
-						"class": "%logger{40}",
-						"rest": "%message"
-						}
-					</pattern>
-				</pattern>
-			</providers>
+		<encoder charset="UTF-8">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
 		</encoder>
 	</appender>
-
+	
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>D:\data\logs\eureka.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+		</encoder>
+		<append>true</append>
+	</appender>
+ 	-->
+ 	
 	<root level="INFO">
-		<appender-ref ref="LOGSTASH" />
 		<appender-ref ref="CONSOLE" />
+		<!-- 		
+ 		<appender-ref ref="FILE"/>
+		<appender-ref ref="LOGSTASH"/> 
+		-->
 	</root>
 
 </configuration>
