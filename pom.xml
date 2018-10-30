@@ -44,7 +44,7 @@
 						</execution>
 					</executions>
 					<configuration>
-						<repository>${project.groupId}/${project.artifactId}</repository>
+						<repository>qianlixy.github.io/microserver-eureka</repository>
 						<tag>${project.version}</tag>
 						<buildArgs>
 							<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
