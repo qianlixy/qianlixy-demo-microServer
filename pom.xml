@@ -5,17 +5,20 @@
 	<artifactId>qianlixy-demo-microserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	
 	<modules>
 		<module>qianlixy-demo-microServer-eureka</module>
 		<module>qianlixy-demo-microServer-config</module>
 		<module>qianlixy-demo-microServer-zipkin</module>
 		<module>qianlixy-demo-microserver-fileupload</module>
 	</modules>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.2.RELEASE</version>
 	</parent>
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -27,6 +30,10 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+	<properties>
+		<docker.registry.url>registory.qianli.site</docker.registry.url>
+	</properties>
 
 	<build>
 		<pluginManagement>
@@ -45,8 +52,8 @@
 						</execution>
 					</executions>
 					<configuration>
-						<repository>${project.groupId}/${project.artifactId}</repository>
-						<tag>latest</tag>
+						<repository>${docker.registry.url}/${project.artifactId}</repository>
+						<tag>${project.version}</tag>
 						<buildArgs>
 							<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
 						</buildArgs>
