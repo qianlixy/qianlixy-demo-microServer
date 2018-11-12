@@ -32,7 +32,7 @@
 	</dependencyManagement>
 	
 	<properties>
-		<docker.registry.url>registory.qianli.site</docker.registry.url>
+		<docker.registry.url>registry.qianli.site</docker.registry.url>
 	</properties>
 
 	<build>
