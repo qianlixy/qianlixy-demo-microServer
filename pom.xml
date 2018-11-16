@@ -11,6 +11,7 @@
 		<module>qianlixy-demo-microServer-config</module>
 		<module>qianlixy-demo-microServer-zipkin</module>
 		<module>qianlixy-demo-microserver-fileupload</module>
+		<module>qianlixy-demo-server-cachemanager</module>
 	</modules>
 	
 	<parent>
