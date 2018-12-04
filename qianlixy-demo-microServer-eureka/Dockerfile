@@ -1,4 +1,4 @@
-FROM docker.io/openjdk:8-jre
+FROM docker.io/java:8
 
 MAINTAINER qianli_xy@163.com
 
