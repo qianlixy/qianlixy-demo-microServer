@@ -1,0 +1,51 @@
+server:
+  port: 8888
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@gitee.com:qianli_xy/microservice-config-repository.git
+          search-paths: '{profile}'
+          ignoreLocalSshSettings: true
+          privateKey: |
+                        -----BEGIN RSA PRIVATE KEY-----
+                        MIIEowIBAAKCAQEAvhWlGI4VFScq5BVc47MYOF8e+lEOv6ufMZj1G18D8pjpd9vt
+                        c4MCj81wqRoMqnrLZR7l7K7wDZRNkQAkDJWZuftdfzLY5aK5f7ejVOLgzyEgGgbV
+                        FWwDm0hamGarCgZ6PJM3K6fwSAXAt0SGabqAHUvNMrMDQmiXcQLjp1FU3tWOqoES
+                        c+G6wj3VSvBw5XVq7rg9soDdPtmqCJ/zE3FUS4IS72vMaphRb+NKvF98jhNO9Ujb
+                        zHPZirgW/eHNl8zks5lh1iUc4m7LQKMBguHXpJTfpRZrNAqKaFoAQ326VCzU4BWf
+                        d/CLxgvK9LhByCiCg/eyrsSXZijh76qHD6XEuQIDAQABAoIBAFZ3miZVW5nHu2cN
+                        oLejnHzoKDtN7BucgkoZfkX5Lt6IWIvBa36ENgIcPgduZhyWxzc0mvrTiTdkIvS2
+                        z685zjgf9CQMiUXMg/1pF89hdUpDk0rDmOKpw+o7O5rf+SYSVECB5zLgrhjVJRk4
+                        /rvRrr2k4a8SZ4Up9tndqplOEgFa81flZxSpsTb1JGtyU2yaEpwETc1MXqctynbi
+                        L+mV0RmxHI5wCfw1UiLa2Uiw3gVol71ObwOIsZbI6ukLmdhqF/co3a+fnB+ZbE2y
+                        L/Z333iuT53CwhvDN0PHYUBiDR5BjYR/Z4ALclYA3M9E3XkDP61ooMZQvbiiS30T
+                        9v7QZUECgYEA386s8fozv/9asWj0TDsmtJJs8+dIk7Yrd+kFIJHLasLQcfp4Q2Yg
+                        7TNdwgPiNnGpitsYu4qATKsDQP6um/jGWR2Tnjn7akJtq02LhtAzQhhbCu5ZU/zs
+                        u0xNGc6kZbd4A3PT4G9y0BbhRgevxqzDga1+50Ud1Cnp8FKkKWGeTpUCgYEA2W0v
+                        d/GD4urzqsyHIJZE9tCblGKcGsoTi1r0Gsce1J6xO0n1fU1twPngfOigqfolKXum
+                        jqMXeCG8uLcL381/7g160RrUTzFR6dutzw1urdye4cQC2pGCsvyZRidUhqfHKYJn
+                        W6ISnSLKUa07wce/4jpAen8bNDr5jwEErqZf6JUCgYAjOblYwKOihYN1xuokkW7P
+                        HvjNDssKjLKcxe1LqgbVP+Jk/iItoYZvLxWDsu7I2OzxcPick/kLmCMD+NHstKQr
+                        ZI9WaRPcLqZqPuNGDcDzlzfFKayfnoB4HlNIS5DufYkDKhjgC0qL2/4K8qzE3W5M
+                        G82MgwFl4k7yx18VMEslXQKBgQCrzXvJsfw9rNuXZX+Mv1CFGnck+/pPrMdewSLL
+                        mfWBmld++sTRGwKTjp7U9Fgnl7IPolYMtVBRK49dAb6PPGlO6DXYzvNeFCGewWgI
+                        iJuhJAgjaue6X2pAFhri9Sb0M9TKtvEG1f0RTzFA8rqaN0Um9FKIuLD9R3B0kCBs
+                        BKkaNQKBgDaccACXXoK9kN9VqyRbzrN37UnIhzCAgKIZwCLNfgwDvGJ6wARENeoe
+                        ubmzXB5WSYMSImaOJC+S4espy1AgDYxmBVxXnXWCkM56l9UngVZkFHn/19RXtiNA
+                        CrTGMGFxarEo+XCIoUdlxF5Xz7tcpSPo7BjxatHbofN2ApWie3P9
+                        -----END RSA PRIVATE KEY-----
+                      
+          
