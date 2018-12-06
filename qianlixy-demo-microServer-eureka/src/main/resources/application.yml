@@ -8,11 +8,11 @@ eureka:
     # 禁用自我保护模式，正式环境下谨慎使用
     enable-self-preservation: true
     # 扫描失效服务的间隔时间
-    eviction-interval-timer-in-ms: 1000
+    eviction-interval-timer-in-ms: 5000
   instance:
     hostname: localhost
     # 服务续约到期时间
-    lease-expiration-duration-in-seconds: 2
+    lease-expiration-duration-in-seconds: 10
   client:
     registerWithEureka: false
     fetchRegistry: false
