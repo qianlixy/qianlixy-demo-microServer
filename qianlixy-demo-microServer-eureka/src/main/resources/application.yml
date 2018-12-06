@@ -1,0 +1,20 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka
+eureka:
+  server:
+    # 禁用自我保护模式，正式环境下谨慎使用
+    enable-self-preservation: false
+    # 扫描失效服务的间隔时间
+    eviction-interval-timer-in-ms: 1000
+  instance:
+    hostname: localhost
+    # 服务续约到期时间
+    lease-expiration-duration-in-seconds: 2
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
