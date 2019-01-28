@@ -1,8 +1,5 @@
-server:
-  port: 8761
-spring:
-  application:
-    name: eureka
+server.port: 8761
+spring.application.name: eureka
 eureka:
   server:
     # 禁用自我保护模式，正式环境下谨慎使用
@@ -13,8 +10,7 @@ eureka:
     hostname: localhost
     # 服务续约到期时间
     lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
   client:
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
